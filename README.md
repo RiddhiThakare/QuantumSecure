@@ -47,43 +47,39 @@ cd liboqs-java
 
 # Build the library using Maven
 mvn clean package
+```
+
 📦 After Successful Build
 The generated JAR file will be located at:
 
-bash
-Copy code
 liboqs-java/target/liboqs-java-<version>.jar
+
+
 📁 Next Step
 Copy the generated .jar file into your main project directory:
 
-bash
-Copy code
 QuantumSecure/lib/
-🔒 2. Java Cryptography Extension (JCE)
-Purpose: Provides AES-256-GCM encryption used for symmetric data protection.
-Note: JCE is already included in Java 8 and above — no extra installation needed.
 
-✅ Summary
-Dependency	Source	Used For
-liboqs-java	Open Quantum Safe	CRYSTALS-Kyber (Key Encapsulation), CRYSTALS-Dilithium (Digital Signatures)
-JCE (Java built-in)	Java SDK 8+	AES-256-GCM Encryption
+
+### 🔒 2. Java Cryptography Extension (JCE)
+Purpose: Provides AES-256-GCM encryption used for symmetric data protection.
+Note: JCE is already included in Java 8 and above — no additional installation required.
+
+| Dependency              | Source                                                                | Used For                                                                    |
+| ----------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **liboqs-java**         | [Open Quantum Safe](https://github.com/open-quantum-safe/liboqs-java) | CRYSTALS-Kyber (Key Encapsulation), CRYSTALS-Dilithium (Digital Signatures) |
+| **JCE (Java built-in)** | Java SDK 8+                                                           | AES-256-GCM Encryption                                                      |
+
 
 🧠 Important
-After adding the .jar file in the /lib/ folder, compile and run the project using:
+After adding the .jar file to the /lib/ folder, compile and run the project using the following commands:
 
 bash
 Copy code
 javac -cp "src;lib/*" -d bin src/*.java
 java -cp "bin;lib/*" Main
-This ensures the Java compiler and runtime can access the liboqs-java library correctly.
 
-yaml
-Copy code
+💡 For Linux/Mac users:
+Replace the semicolon ; with a colon : in the classpath (e.g., "src:lib/*").
 
----
-
-
-
-
-
-
+This ensures the Java compiler and runtime can correctly access the liboqs-java library.
