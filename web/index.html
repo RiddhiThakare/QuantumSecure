@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Safe - Secure File Sharing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo1.png" alt="Quantum Safe Logo" />
+      <span class="logo-text">Quantum Safe</span>
+    </div>
+    <div class="menu">
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('sendfile')">Send File</a>
+      <a href="#" onclick="showPage('download')">Download</a>
+      <a href="#sendfile" class="btn" onclick="showPage('sendfile')">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>The Only Tool You Need To Send Your Files Securely</h1>
+        <p>Send your files and documents <strong>SECURELY</strong> with post-quantum protection powered by AES-256, CRYSTALS-Kyber, and Dilithium.</p>
+        <button class="btn" onclick="showPage('sendfile')">Get Started</button>
+      </div>
+      <div class="hero-img">
+        <img src="people.png" alt="Secure File Sharing"/>
+      </div>
+    </div>
+
+    <div class="features">
+      <h2>People use <span style="color:#004aad;">Quantum Safe</span> for</h2>
+      <p>Secure, fast, and future-ready file transfers with quantum-resistant encryption.</p>
+      <div class="feature-boxes">
+        <div class="feature">
+          <img src="imagesecurity.jpg" alt="High Security"/>
+          <h3>High Security</h3>
+          <p>Your files are protected with AES-256-GCM, encapsulated via CRYSTALS-Kyber, and signed using Dilithium for post-quantum safety.</p>
+        </div>
+        <div class="feature">
+          <img src="imagefast.jpg" alt="Speed Transfer"/>
+          <h3>Fast Transfer</h3>
+          <p>Experience lightning-fast encryption and sharing, designed for both speed and security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Send File Section -->
+  <section id="sendfile" class="page">
+    <h1 class="page-title">Send File</h1>
+    <p class="breadcrumb">Home &gt; Send File</p>
+
+    <form id="sendForm" class="form-container">
+      <div class="upload-box">
+        <input type="file" name="file" id="fileInput" required />
+        <label for="fileInput">Click to upload or <span style="color:#004aad;">drag & drop</span></label>
+        <small>(Max Size: 100MB)</small>
+      </div>
+
+      <input type="text" name="receiver" placeholder="Receiver's Identifier (optional)" class="input-field" />
+
+      <p class="note">🔒 Files are secured automatically using AES-256 + CRYSTALS-Kyber + Dilithium.  
+      No password required — encryption keys are quantum-safe and handled internally.</p>
+
+      <button type="submit" class="action-btn">Upload & Encrypt</button>
+    </form>
+
+    <p id="sendMsg" class="message"></p>
+  </section>
+
+  <!-- File Download Section -->
+  <section id="download" class="page">
+    <h1 class="page-title">Download File</h1>
+    <p class="breadcrumb">Home &gt; Download</p>
+
+    <form id="downloadForm" class="form-container">
+      <input type="text" name="file_name" placeholder="Enter Encrypted File Name (e.g., hospital.xlsx.enc)" class="input-field" required />
+      <button type="submit" class="action-btn">Download & Decrypt</button>
+    </form>
+    <p id="downloadMsg" class="message"></p>
+  </section>
+
+  <footer style="text-align:center; padding:20px; font-size:14px; background:#f9f9f9;">
+    © 2025 Quantum Safe | Built using AES-256, CRYSTALS-Kyber, and CRYSTALS-Dilithium
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
